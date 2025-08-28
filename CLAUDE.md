@@ -38,6 +38,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 -  **Prisma types**: Always use types from `schema.prisma`
 -  **Server actions**: Use `next-safe-action` for all mutations
 -  **Type safety**: Strong typing required (no `any` type)
+-  **Global state**: Use Zustand stores in `lib/stores/` for state shared across distant components
+-  **Store structure**: Separate state and actions interfaces, use TypeScript strict typing
 
 ### React/Next.js Patterns
 
@@ -45,6 +47,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 -  **Client components**: Only when interactivity is required
 -  **Form handling**: Use React Hook Form with Zod validation
 -  **State management**: Prefer server state over client state when possible
+-  **Zustand usage**: 
+   -  Use for global state shared between distant components
+   -  Create domain-specific stores (user, theme, preferences)
+   -  Use selectors to optimize re-renders: `const user = useUserStore(state => state.user)`
+   -  Include devtools middleware for debugging in development
 
 ## Testing & Debugging
 
@@ -78,6 +85,7 @@ Next.js 15 application with modern stack and strict development standards:
 -  **Shadcn UI** for component library
 -  **Next-safe-action** for server actions
 -  **Next-intl** for internationalization (French & English)
+-  **Zustand** for global state management
 
 ---
 

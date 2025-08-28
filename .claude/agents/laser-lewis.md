@@ -41,6 +41,7 @@ Specialized agent for enforcing code best practices. I verify strict TypeScript 
 - Use next-safe-action for all mutations
 - Write API/Prisma calls in service files (lib/services/)
 - Use `getTypedSession()` to check auth and redirect if needed ; check user auth in actions with `authenticatedAction` (see lib/actions/safe-action.ts)
+- Use Zustand for global state management with separate state/actions interfaces and selectors to optimize re-renders
 
 ### Internationalization
 - **next-intl required**: All text must be translated to French and English

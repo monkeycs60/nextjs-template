@@ -21,7 +21,7 @@ A production-ready Next.js boilerplate with modern stack, strict development sta
 - 🎯 **Form Validation** with React Hook Form and Zod
 - 🚦 **Server Actions** with next-safe-action
 - 🤖 **AI-Powered Development** with Claude Code integration
-- 📊 **State Management** with TanStack Query
+- 📊 **State Management** with TanStack Query and Zustand
 - 🎭 **Theming** with next-themes (dark/light mode)
 
 
@@ -96,6 +96,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 │   ├── actions/                # Server actions
 │   ├── services/               # Database services
 │   ├── schemas/                # Validation schemas
+│   ├── stores/                 # Zustand stores
 │   ├── auth.ts                 # Authentication config
 │   └── prisma.ts               # Database client
 ├── messages/                   # i18n translation files
@@ -164,6 +165,7 @@ This template integrates seamlessly with **Claude Code** for an enhanced develop
 - **Feature-based architecture** - Group by business domain
 - **Component splitting** - Max 350 lines per file
 - **Service layer** - All API calls in `lib/services/`
+- **State management** - Use Zustand for global state, avoid prop drilling
 - **Self-documenting code** - Avoid unnecessary comments
 
 ## 🔧 MCP Configuration & AI Integration
