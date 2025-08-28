@@ -42,6 +42,9 @@ next-env.d.ts
 
 /app/generated/prisma
 
+# mcp
+.mcp
+
 # Playwright
 node_modules/
 /test-results/
