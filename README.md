@@ -42,32 +42,22 @@ cd nextjs-template
 npm install
 ```
 
-2. **Set up your database:**
+2. **Set up environment variables:**
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit .env with your actual values
+nano .env  # or your preferred editor
+```
+
+3. **Set up PostgreSQL database:**
 ```bash
 # Create a PostgreSQL database
 createdb your_database_name
 
-# Set up environment variables
-cp .env.example .env.local
-# Edit .env.local with your database URL and auth secrets
-```
-
-3. **Configure environment variables:**
-```bash
-# Database
-DATABASE_URL="postgresql://username:password@localhost:5432/your_database"
-SHADOW_DATABASE_URL="postgresql://username:password@localhost:5432/your_shadow_db"
-
-# Auth
-BETTER_AUTH_SECRET="your-secret-key"
-BETTER_AUTH_URL="http://localhost:3000"
-
-# Google OAuth (optional)
-GOOGLE_CLIENT_ID="your-google-client-id"
-GOOGLE_CLIENT_SECRET="your-google-client-secret"
-
-# AI Integration (optional)
-GOOGLE_GENERATIVE_AI_API_KEY="your-gemini-api-key"
+# Create shadow database for Prisma
+createdb your_shadow_database
 ```
 
 4. **Run database migrations:**
@@ -76,7 +66,13 @@ npx prisma migrate dev
 npx prisma generate
 ```
 
-5. **Start development server:**
+5. **Set up MCP (Model Context Protocol) for AI integration:**
+```bash
+# Generate MCP configuration from template
+./setup-mcp.sh
+```
+
+6. **Start development server:**
 ```bash
 npm run dev
 ```
@@ -135,6 +131,7 @@ This template integrates seamlessly with **Claude Code** for an enhanced develop
 
 - **🔍 laser-lewis** - Code quality enforcement agent
   - Verifies TypeScript strict typing (no `any`)
+  - Ensures best practices are followed
   - Ensures proper component architecture
   - Checks internationalization compliance
   - Removes unnecessary code and comments
@@ -168,6 +165,34 @@ This template integrates seamlessly with **Claude Code** for an enhanced develop
 - **Component splitting** - Max 350 lines per file
 - **Service layer** - All API calls in `lib/services/`
 - **Self-documenting code** - Avoid unnecessary comments
+
+## 🔧 MCP Configuration & AI Integration
+
+This template includes **secure MCP (Model Context Protocol)** setup for AI development:
+
+### Security Features
+- **No exposed API keys** - All secrets are stored in `.env`
+- **Template-based config** - `.mcp.json.template` can be shared safely
+- **Automatic generation** - `setup-mcp.sh` script creates config from env vars
+
+### Available MCP Services
+- **Playwright** - Browser automation and testing
+- **Brave Search** - Web search capabilities  
+- **Context7** - Documentation and code examples
+- **Browser MCP** - Enhanced browser interactions
+- **PostgreSQL** - Direct database access
+- **Figma** - Design file integration
+
+### Setup Process
+```bash
+# 1. Add your API keys to .env file
+BRAVE_API_KEY="your-key-here"
+FIGMA_API_KEY="your-key-here"
+DATABASE_URL="your-db-url"
+
+# 2. Generate MCP configuration
+./setup-mcp.sh
+```
 
 ## 🗄️ Database
 
@@ -223,7 +248,7 @@ npm run test:e2e:ui
 ```bash
 DATABASE_URL="your-production-db-url"
 BETTER_AUTH_SECRET="secure-random-string"
-BETTER_AUTH_URL="https://your-domain.com"
+NEXT_PUBLIC_APP_URL="https://your-domain.com"
 ```
 
 ## 🤝 Contributing
