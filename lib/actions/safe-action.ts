@@ -1,5 +1,5 @@
 import { createSafeActionClient, DEFAULT_SERVER_ERROR_MESSAGE } from "next-safe-action";
-import { getTypedSession } from "../lib/auth-helpers";
+import { getTypedSession } from "../auth-helpers";
 
 export const actionClient = createSafeActionClient({
   handleServerError(e) {

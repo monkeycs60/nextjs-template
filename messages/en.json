@@ -33,7 +33,21 @@
     "orContinueWith": "Or continue with",
     "nameMinLength": "Name must be at least 2 characters",
     "invalidEmail": "Invalid email address",
-    "passwordMinLength": "Password must be at least 6 characters"
+    "passwordMinLength": "Password must be at least 6 characters",
+    "welcomeBack": "Welcome back",
+    "signInToAccount": "Sign in to your account",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign in",
+    "demoCredentials": "Demo credentials",
+    "userCredentials": "User",
+    "adminCredentials": "Admin",
+    "signUp": "Sign up",
+    "createAccount": "Create an account",
+    "signUpToStart": "Sign up to get started",
+    "namePlaceholder": "Enter your name",
+    "signupFailed": "Signup failed"
   },
   "profile": {
     "title": "Profile",
