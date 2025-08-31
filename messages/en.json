@@ -47,7 +47,10 @@
     "createAccount": "Create an account",
     "signUpToStart": "Sign up to get started",
     "namePlaceholder": "Enter your name",
-    "signupFailed": "Signup failed"
+    "signupFailed": "Signup failed",
+    "continueWithGoogle": "Continue with Google",
+    "orDivider": "OR",
+    "googleSignInError": "Google sign-in failed"
   },
   "profile": {
     "title": "Profile",

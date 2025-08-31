@@ -14,6 +14,7 @@ import { AlertCircle, UserPlus, Eye, EyeOff } from 'lucide-react';
 import { signupAction } from '../actions';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { GoogleButton } from '../../components/auth/google-button';
 
 export function SignupForm() {
   const t = useTranslations('auth');
@@ -48,6 +49,7 @@ export function SignupForm() {
     },
     onSuccess: ({ data }) => {
       if (data?.success) {
+        router.refresh();
         router.push(`/${locale}/dashboard`);
       }
     },
@@ -62,7 +64,7 @@ export function SignupForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="w-md mx-auto">
       <Card>
         <CardHeader className="text-center space-y-4">
           <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto">
@@ -77,6 +79,21 @@ export function SignupForm() {
         </CardHeader>
 
         <CardContent className="space-y-6">
+          {/* Google Sign-In Button */}
+          <GoogleButton mode="signup" />
+
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                {t('orDivider')}
+              </span>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit(handleSignup)} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">{t('name')}</Label>

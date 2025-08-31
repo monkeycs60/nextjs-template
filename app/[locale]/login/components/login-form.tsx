@@ -14,6 +14,7 @@ import { AlertCircle, LogIn, Eye, EyeOff } from 'lucide-react';
 import { loginAction } from '../actions';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { GoogleButton } from '../../components/auth/google-button';
 
 interface LoginFormProps {
   showSignupLink?: boolean;
@@ -51,6 +52,7 @@ export function LoginForm({ showSignupLink = true }: LoginFormProps) {
     },
     onSuccess: ({ data }) => {
       if (data?.success) {
+        router.refresh();
         router.push(`/${locale}/dashboard`);
       }
     },
@@ -69,7 +71,7 @@ export function LoginForm({ showSignupLink = true }: LoginFormProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="w-md mx-auto">
       <Card>
         <CardHeader className="text-center space-y-4">
           <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto">
@@ -84,6 +86,21 @@ export function LoginForm({ showSignupLink = true }: LoginFormProps) {
         </CardHeader>
 
         <CardContent className="space-y-6">
+          {/* Google Sign-In Button */}
+          <GoogleButton mode="signin" />
+
+          {/* Divider */}
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-background px-2 text-muted-foreground">
+                {t('orDivider')}
+              </span>
+            </div>
+          </div>
+
           <form onSubmit={handleSubmit(handleLogin)} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">{t('email')}</Label>

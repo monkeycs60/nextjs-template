@@ -47,7 +47,10 @@
 		"createAccount": "Créer un compte",
 		"signUpToStart": "Inscrivez-vous pour commencer",
 		"namePlaceholder": "Entrez votre nom",
-		"signupFailed": "Échec de l'inscription"
+		"signupFailed": "Échec de l'inscription",
+		"continueWithGoogle": "Continuer avec Google",
+		"orDivider": "OU",
+		"googleSignInError": "Échec de la connexion Google"
 	},
 	"profile": {
 		"title": "Profil",
