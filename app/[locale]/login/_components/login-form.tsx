@@ -14,7 +14,7 @@ import { AlertCircle, LogIn, Eye, EyeOff } from 'lucide-react';
 import { loginAction } from '../actions';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { GoogleButton } from '../../components/auth/google-button';
+import { GoogleButton } from '../../_components/auth/google-button';
 import { authClient } from '@/lib/auth-client';
 
 interface LoginFormProps {

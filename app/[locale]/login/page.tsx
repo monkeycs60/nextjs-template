@@ -1,5 +1,5 @@
 import { redirectIfAuthenticated } from '@/lib/auth-guard';
-import { LoginForm } from './components/login-form';
+import { LoginForm } from './_components/login-form';
 
 export default async function LoginPage() {
   await redirectIfAuthenticated();

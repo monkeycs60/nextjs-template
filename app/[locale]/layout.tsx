@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/app/i18n/routing';
 import '../globals.css';
-import { Navbar } from './components/navbar';
+import { Navbar } from './_components/navbar';
 import Script from 'next/script';
 
 const geistSans = Geist({
