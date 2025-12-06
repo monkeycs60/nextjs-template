@@ -51,9 +51,9 @@ export function SignupForm() {
 		},
 		onSuccess: async ({ data }) => {
 			if (data?.success) {
-				refetchSession?.();
-				router.refresh();
+				refetchSession();
 				router.push(`/${locale}/dashboard`);
+				router.refresh();
 			}
 		},
 	});

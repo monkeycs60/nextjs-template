@@ -54,10 +54,9 @@ export function LoginForm({ showSignupLink = true }: LoginFormProps) {
 		},
 		onSuccess: async ({ data }) => {
 			if (data?.success) {
-				// Refetch session to update client-side state
-				refetchSession?.();
-				router.refresh();
+				refetchSession();
 				router.push(`/${locale}/dashboard`);
+				router.refresh();
 			}
 		},
 	});
